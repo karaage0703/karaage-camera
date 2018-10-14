@@ -13,7 +13,7 @@ All image will change to KARAAGE!
 ```sh
 $ git clone https://github.com/karaage0703/karaage-camera
 $ cd karaage-camera/model
-$ wget https://www.dropbox.com/s/3vk171n8jroxqt7/karaage_gen_weight.hdf5?dl=0 -O test.hdf5
+$ wget https://www.dropbox.com/s/3vk171n8jroxqt7/karaage_gen_weight.hdf5?dl=0 -O karaage_gen_weight.hdf5
 ```
 
 
