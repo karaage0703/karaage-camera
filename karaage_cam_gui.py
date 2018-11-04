@@ -39,6 +39,23 @@ def screen_opening():
     time.sleep(3)
     screen_clear()
 
+def screen_gan():
+    title = title_font.render(u'GAN変換中', True, (255,255,255))
+    screen.fill((0,0,0))
+    screen.blit(title, (30,100))
+    pygame.display.update()
+
+def screen_countup():
+    count = 0
+    while count <= 100:
+       count_str = str(count) + "%"
+       count_text = title_font.render(count_str, True, (255,255,255))
+       screen.fill((0,0,0))
+       screen.blit(count_text,(100,100))
+       pygame.display.update()
+       time.sleep(2.5)
+       count += 10
+
 def screen_shutter():
     text = title_font.render('Taking Photo', True, (255,255,255))
     screen.fill((0,0,0))
