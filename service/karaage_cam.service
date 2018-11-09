@@ -1,0 +1,8 @@
+[Unit]
+Description=karaage camera service
+[Service]
+ExecStart=/home/pi/karaage-camera/karaage_cam_boot.sh
+Restart = no
+Type=simple
+[Install]
+WantedBy=multi-user.target
