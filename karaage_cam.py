@@ -25,15 +25,14 @@ def shutter():
         go_home()
     else:
         gui.screen_shutter()
-        sh.cameraLoad()
+        sh.setting()
+        sh.preview()
         sh.shutter()
-        # sh.shutter_small()
-        sh.cameraSave()
         go_home()
-
 
 def CallShutdown():
     print("Going shutdown by GPIO.")
+    sh.camera.close()
     syslog.syslog(syslog.LOG_NOTICE, "Going shutdown by GPIO.")
     os.system("/sbin/shutdown -h now 'Poweroff by GPIO'")
 
@@ -73,9 +72,7 @@ def preview():
             preview_numb = sh.shutter_numb
 
 if __name__ == '__main__':
-    sh.photodirCheck()
-
-    sh.cameraLoad()
+    sh.loadFile()
     preview_numb = sh.shutter_numb
 
     gui.screen_opening()
@@ -118,8 +115,10 @@ if __name__ == '__main__':
                         preview()
                     if button == 'shutdown':
                         print('shutdown')
+                        CallShutdown()
 
             #ensure there is always a safe way to end the program if the touch screen fails
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
+                    sh.camera.close()
                     sys.exit()
