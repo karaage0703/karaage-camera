@@ -34,7 +34,7 @@ $ sudo systemctl disable karaage_cam.service
 # Usage
 
 
-# Licence
+# License
 This software is released under the MIT License, see LICENSE.
 
 # Authors
